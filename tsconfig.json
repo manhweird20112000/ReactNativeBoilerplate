@@ -8,10 +8,12 @@
       "@hooks/*": ["./src/hooks/*"],
       "@pages/*": ["./src/pages/*"],
       "@themes/*": ["./src/themes/*"],
+      "@infra/*": ["./src/infra/*"],
       "@reducers/*": ["./src/store/reducers/*"],
       "@sagas/*": ["./src/store/sagas/*"],
       "@common/*": ["./src/components/commons/*"],
       "@partial/*": ["./src/components/partial/*"]
-    }
+    },
+    "typeRoots": ["./src/types"]
   }
 }

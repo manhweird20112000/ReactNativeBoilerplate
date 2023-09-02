@@ -15,7 +15,15 @@ module.exports = {
           {'@utils': './src/utils'},
           {'@navigation': './src/navigation'},
           {'@themes': './src/themes'},
+          {'@infra': './src/infra'},
         ],
+      },
+    ],
+    [
+      'module:react-native-dotenv',
+      {
+        allowlist: ['BASE_API', 'IP_DEBUG'],
+        safe: true,
       },
     ],
   ],
