@@ -12,6 +12,7 @@
       "@reducers/*": ["./src/store/reducers/*"],
       "@sagas/*": ["./src/store/sagas/*"],
       "@common/*": ["./src/components/commons/*"],
+      "@assets/*": ["./assets/*"],
       "@partial/*": ["./src/components/partial/*"]
     },
     "typeRoots": ["./src/types"]

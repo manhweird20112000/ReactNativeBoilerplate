@@ -8,6 +8,8 @@ module.exports = {
         extensions: ['.js', '.ts', '.tsx', '.jsx'],
         alias: [
           {'@components': './src/components'},
+          {'@common': './src/components/common'},
+          {'@partial': './src/components/partial'},
           {'@reducers': './src/store/reducers'},
           {'@sagas': './src/store/sagas'},
           {'@pages': './src/pages'},
@@ -16,6 +18,7 @@ module.exports = {
           {'@navigation': './src/navigation'},
           {'@themes': './src/themes'},
           {'@infra': './src/infra'},
+          {'@assets': './assets'},
         ],
       },
     ],
