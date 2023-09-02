@@ -3,7 +3,15 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["./src/components/*"]
+      "@components/*": ["./src/components/*"],
+      "@navigations/*": ["./src/navigations/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@themes/*": ["./src/themes/*"],
+      "@reducers/*": ["./src/store/reducers/*"],
+      "@sagas/*": ["./src/store/sagas/*"],
+      "@common/*": ["./src/components/commons/*"],
+      "@partial/*": ["./src/components/partial/*"]
     }
   }
 }
