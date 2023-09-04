@@ -6,6 +6,7 @@
       "@components/*": ["./src/components/*"],
       "@navigations/*": ["./src/navigations/*"],
       "@hooks/*": ["./src/hooks/*"],
+      "@utils/*": ["./src/utils/*"],
       "@pages/*": ["./src/pages/*"],
       "@themes/*": ["./src/themes/*"],
       "@infra/*": ["./src/infra/*"],
