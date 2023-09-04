@@ -1,12 +1,12 @@
 import React from 'react';
-import {Modal, ModalProps, View, ViewStyle} from 'react-native';
+import { Modal, ModalProps, View, ViewStyle } from 'react-native';
 
 interface DialogProps extends Omit<ModalProps, 'supportedOrientations'> {
   children: React.ReactNode;
   background?: string;
 }
 export function Dialog(props: DialogProps) {
-  const {children, background, ...rest} = props;
+  const { children, background, ...rest } = props;
   return (
     <Modal
       {...rest}
@@ -17,7 +17,7 @@ export function Dialog(props: DialogProps) {
         'landscape-left',
         'landscape-right',
       ]}>
-      <View style={[$container, {backgroundColor: background}]}>
+      <View style={[$container, { backgroundColor: background }]}>
         {children}
       </View>
     </Modal>

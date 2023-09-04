@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import {
   Keyboard,
   KeyboardAvoidingView,
@@ -20,11 +20,11 @@ interface ScreenProps {
   onRefresh?(): void;
 }
 function Layout(props: LayoutProps) {
-  const {children} = props;
-  const {width, height} = useWindowDimensions();
+  const { children } = props;
+  const { width, height } = useWindowDimensions();
   return (
     <KeyboardAvoidingView
-      style={[$container, {width, height}]}
+      style={[$container, { width, height }]}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         {children}
@@ -34,7 +34,7 @@ function Layout(props: LayoutProps) {
 }
 
 export function Screen(props: ScreenProps) {
-  const {isScroll = false, children, onRefresh, isRefresh = false} = props;
+  const { isScroll = false, children, onRefresh, isRefresh = false } = props;
   if (isScroll) {
     return (
       <Layout>

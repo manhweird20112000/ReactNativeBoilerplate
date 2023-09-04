@@ -1,4 +1,4 @@
-import {all} from 'redux-saga/effects';
+import { all } from 'redux-saga/effects';
 import example from '@sagas/example';
 
 const sagas = [...example];

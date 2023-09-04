@@ -1,5 +1,5 @@
-import {NavigationContainer} from '@react-navigation/native';
-import {MainNavigator} from './main-navigator';
+import { NavigationContainer } from '@react-navigation/native';
+import { MainNavigator } from './main-navigator';
 import React from 'react';
 
 interface NavigationProps

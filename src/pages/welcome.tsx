@@ -1,13 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   ImageBackground,
   Text,
   TouchableHighlight,
   ViewStyle,
 } from 'react-native';
-import {useDispatch} from 'react-redux';
-import {Icon, Screen} from '@components/common';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { useDispatch } from 'react-redux';
+import { Icon, Screen } from '@components/common';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const wallpaper = require('@assets/images/wallpaper.jpg');
 export function Welcome() {
@@ -16,15 +16,15 @@ export function Welcome() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    dispatch({type: 'EXAMPLE'});
+    dispatch({ type: 'EXAMPLE' });
   }, [dispatch]);
   return (
     <Screen>
       <ImageBackground style={$container} source={wallpaper} resizeMode="cover">
         <SafeAreaView style={$container}>
           <TouchableHighlight
-            onPress={() => setCount(prevState => prevState + 1)}>
-            <Text style={{color: 'white'}}>Click {count}</Text>
+            onPress={() => setCount((prevState) => prevState + 1)}>
+            <Text style={{ color: 'white' }}>Click {count}</Text>
           </TouchableHighlight>
           <Icon
             icon={

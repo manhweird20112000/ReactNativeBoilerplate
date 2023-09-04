@@ -1,4 +1,4 @@
-import {delay, takeLatest} from 'redux-saga/effects';
+import { delay, takeLatest } from 'redux-saga/effects';
 
 export function* getPosts() {
   yield delay(1000);

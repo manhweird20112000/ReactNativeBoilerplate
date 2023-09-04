@@ -1,5 +1,5 @@
 import Reactotron from 'reactotron-react-native';
-import {reactotronRedux} from 'reactotron-redux';
+import { reactotronRedux } from 'reactotron-redux';
 
 const reactotron = Reactotron.configure({
   name: process.env.APP_NAME,
