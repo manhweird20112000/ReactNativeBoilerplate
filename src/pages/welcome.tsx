@@ -1,63 +1,51 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback } from 'react';
+import { Image, SafeAreaView, StatusBar, ViewStyle } from 'react-native';
+import { TapGestureHandler } from 'react-native-gesture-handler';
 import {
-  ImageBackground,
-  Text,
-  TouchableHighlight,
-  ViewStyle,
-} from 'react-native';
-import { useDispatch } from 'react-redux';
-import { Icon, Screen } from '@components/common';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { List } from '@components/common/list';
+  ReduceMotion,
+  useSharedValue,
+  withSpring,
+} from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
 
-const wallpaper = require('@assets/images/wallpaper.jpg');
 export function Welcome() {
-  // const dispatch = useDispatch();
+  const rotateX = useSharedValue('45deg');
 
-  const [isRefreshing, setIsRefreshing] = useState<boolean>(false);
-  const [count, setCount] = useState(0);
-  const [data, setData] = useState<number[]>(new Array(20).fill(5));
+  const handleTap = useCallback(() => {
+    // scale.value = withSpring(Math.random(), {
+    //   mass: 1.8,
+    //   damping: 10,
+    //   stiffness: 100,
+    //   overshootClamping: false,
+    //   restDisplacementThreshold: 0.01,
+    //   restSpeedThreshold: 2,
+    //   reduceMotion: ReduceMotion.System,
+    // });
 
-  const handleRefreshing = () => {
-    const idRefreshTimeout = setTimeout(() => {
-      setIsRefreshing(false);
-      clearTimeout(idRefreshTimeout);
-      setData([]);
-    }, 3000);
-  };
-
-  const handleEndReached = () => {
-    console.log('load more');
-    const arr = new Array(10).fill(1000);
-    setData([...data, ...arr]);
-  };
-  // useEffect(() => {
-  //   dispatch({ type: 'EXAMPLE' });
-  // }, [dispatch]);
+    rotateX.value = withSpring('0deg');
+  }, [rotateX]);
   return (
-    <Screen>
-      <ImageBackground style={$container} source={wallpaper} resizeMode="cover">
-        <SafeAreaView style={$container}>
-          <TouchableHighlight
-            onPress={() => setCount((prevState) => prevState + 1)}>
-            <Text style={{ color: 'white' }}>Click {count}</Text>
-          </TouchableHighlight>
-          <List
-            data={data}
-            refreshing={isRefreshing}
-            onRefresh={handleRefreshing}
-            renderItem={({ item }) => (
-              <Text className="py-7 px-3 text-white">{item}</Text>
-            )}
-            onEndReached={handleEndReached}
-            onEndReachedThreshold={0.2}
+    <SafeAreaView style={$container}>
+      <StatusBar barStyle={'dark-content'} />
+      <TapGestureHandler onActivated={handleTap}>
+        <Animated.View
+          className={'w-1/2 h-auto'}
+          style={{
+            transform: [{ perspective: 1000 }, { rotateX }],
+          }}>
+          <Image
+            className={'w-full h-full'}
+            source={require('@assets/images/sp.png')}
+            resizeMode="contain"
           />
-        </SafeAreaView>
-      </ImageBackground>
-    </Screen>
+        </Animated.View>
+      </TapGestureHandler>
+    </SafeAreaView>
   );
 }
 
 const $container: ViewStyle = {
   flex: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
 };
