@@ -5,6 +5,7 @@ import store, { persist } from './src/store';
 import { AppNavigator } from './src/navigations';
 import { PersistGate } from 'redux-persist/integration/react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { Notification } from '@partial/notification';
 
 function App(): JSX.Element {
   return (
@@ -12,6 +13,7 @@ function App(): JSX.Element {
       <PersistGate persistor={persist}>
         <GestureHandlerRootView className={'flex-1'}>
           <AppNavigator />
+          <Notification />
         </GestureHandlerRootView>
       </PersistGate>
     </Provider>
